@@ -1,16 +1,37 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col justify-center text-center flex-1">
-      <h1 className="text-2xl font-bold mb-4">Hello World</h1>
-      <p>
-        You can open{' '}
-        <Link href="/docs" className="font-medium underline">
-          /docs
-        </Link>{' '}
-        and see the documentation.
-      </p>
+    <div className="flex flex-col justify-center items-center flex-1 px-4 py-8 md:py-16">
+      <div className="max-w-3xl mx-auto text-center space-y-6">
+        {/* Title */}
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
+          Building small, thoughtful{" "}
+          <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            digital products
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+          UI-driven tools, built with clarity and care.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
+          <Button asChild>
+            <Link href="/docs">
+              View Products
+              <ArrowRight className="ml-2 size-4" />
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/docs">Explore Experiments</Link>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
