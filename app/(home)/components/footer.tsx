@@ -30,7 +30,7 @@ export function Footer() {
               Documentation
             </Link>
             <Link
-              href="/blogs"
+              href="mailto:email@cooper-ai.org"
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               Contact
