@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { LucideIcon, ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
-  icon: LucideIcon;
+  icon?: LucideIcon;
   title: string;
   description: string;
   badge: string;
@@ -61,7 +61,7 @@ export function ProjectCard({
         <div className="flex items-start justify-between mb-2">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Icon className="size-5 text-primary" />
+              {Icon && <Icon className="size-5 text-primary" />}
             </div>
           </div>
           <Badge variant={badgeVariant}>{badge}</Badge>
