@@ -21,7 +21,7 @@ export function HeroSection() {
       {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
         <Button asChild>
-          <Link href="/blogs">
+          <Link href="#products">
             View Products
             <ArrowRight className="ml-2 size-4" />
           </Link>
@@ -33,4 +33,3 @@ export function HeroSection() {
     </div>
   );
 }
-

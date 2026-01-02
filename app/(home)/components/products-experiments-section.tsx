@@ -9,7 +9,7 @@ export function ProductsExperimentsSection() {
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
           <Sparkles className="size-6 text-primary" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-3">
+        <h2 id="products" className="text-2xl md:text-3xl font-bold mb-3">
           Products & Experiments
         </h2>
         <p className="text-muted-foreground">
@@ -104,4 +104,3 @@ export function ProductsExperimentsSection() {
     </div>
   );
 }
-
