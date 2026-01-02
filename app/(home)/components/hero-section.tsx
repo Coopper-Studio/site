@@ -21,13 +21,13 @@ export function HeroSection() {
       {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
         <Button asChild>
-          <Link href="/docs">
+          <Link href="/blogs">
             View Products
             <ArrowRight className="ml-2 size-4" />
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs">Explore Experiments</Link>
+          <Link href="/blogs">Explore Experiments</Link>
         </Button>
       </div>
     </div>

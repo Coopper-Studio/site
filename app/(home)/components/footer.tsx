@@ -11,7 +11,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               Independent Software Studio
             </p>
-            <p className="text-xs text-muted-foreground">Built by Su Xiong</p>
+            <p className="text-xs text-muted-foreground">Built by Suxiong</p>
           </div>
 
           {/* Mission Statement */}
@@ -24,13 +24,13 @@ export function Footer() {
           {/* Optional Links */}
           <div className="flex items-center gap-6 pt-2">
             <Link
-              href="/docs"
+              href="/blogs"
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               Documentation
             </Link>
             <Link
-              href="/docs"
+              href="/blogs"
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               Contact
@@ -41,4 +41,3 @@ export function Footer() {
     </footer>
   );
 }
-

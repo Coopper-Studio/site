@@ -47,7 +47,7 @@ export function ProductsExperimentsSection() {
               badgeVariant="outline"
               techStack={["React", "Markdown", "PWA"]}
               actionLabel="View Details"
-              actionHref="/docs"
+              actionHref="/blogs"
             />
 
             <ProjectCard
@@ -74,7 +74,7 @@ export function ProductsExperimentsSection() {
               badgeVariant="default"
               techStack={["AI", "Design", "Web"]}
               actionLabel="Try It Out"
-              actionHref="/docs"
+              actionHref="/blogs"
             />
 
             <ProjectCard
@@ -96,7 +96,7 @@ export function ProductsExperimentsSection() {
               badgeVariant="default"
               techStack={["Node.js", "CLI", "Template"]}
               actionLabel="View on GitHub"
-              actionHref="/docs"
+              actionHref="/blogs"
             />
           </div>
         </TabsContent>

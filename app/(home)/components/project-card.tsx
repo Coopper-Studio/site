@@ -90,7 +90,7 @@ export function ProjectCard({
             className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
             asChild
           >
-            <Link href={actionHref || "/docs"}>
+            <Link href={actionHref || "/blogs"}>
               {actionLabel}
               <ExternalLink className="ml-2 size-3" />
             </Link>

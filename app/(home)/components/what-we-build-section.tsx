@@ -94,7 +94,7 @@ export function WhatWeBuildSection() {
 
           <div className="pt-2">
             <Button variant="outline" size="sm" className="w-full" asChild>
-              <Link href="/docs">Learn More</Link>
+              <Link href="/blogs">Learn More</Link>
             </Button>
           </div>
         </FeatureCard>
