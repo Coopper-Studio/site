@@ -6,9 +6,18 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
+  CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Package, Wrench, Heart } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import {
+  ArrowRight,
+  Package,
+  Wrench,
+  Heart,
+  Sparkles,
+  ExternalLink,
+} from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -206,6 +215,264 @@ export default function HomePage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* Products / Experiments Section */}
+      <div className="max-w-6xl mx-auto w-full mt-24 md:mt-32">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
+            <Sparkles className="size-6 text-primary" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">
+            Products & Experiments
+          </h2>
+          <p className="text-muted-foreground">
+            Building in public, one project at a time
+          </p>
+        </div>
+
+        <Tabs defaultValue="products" className="w-full">
+          <div className="flex justify-center mb-8">
+            <TabsList>
+              <TabsTrigger value="products">Products</TabsTrigger>
+              <TabsTrigger value="experiments">Experiments</TabsTrigger>
+            </TabsList>
+          </div>
+
+          {/* Products Tab */}
+          <TabsContent value="products" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Product Card Example 1 */}
+              <Card className="group hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <Package className="size-5 text-primary" />
+                      </div>
+                    </div>
+                    <Badge variant="secondary">Coming Soon</Badge>
+                  </div>
+                  <CardTitle className="text-lg">TaskFlow</CardTitle>
+                  <CardDescription>
+                    A minimalist task manager that focuses on what matters—your
+                    next action.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="text-xs">
+                      React
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      Next.js
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      TypeScript
+                    </Badge>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button variant="ghost" size="sm" className="w-full" disabled>
+                    Coming Soon
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Product Card Example 2 */}
+              <Card className="group hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <Package className="size-5 text-primary" />
+                      </div>
+                    </div>
+                    <Badge variant="outline">Beta</Badge>
+                  </div>
+                  <CardTitle className="text-lg">QuickNote</CardTitle>
+                  <CardDescription>
+                    Capture thoughts instantly without friction. No folders, no
+                    complexity.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="text-xs">
+                      React
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      Markdown
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      PWA
+                    </Badge>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    asChild
+                  >
+                    <Link href="/docs">
+                      View Details
+                      <ExternalLink className="ml-2 size-3" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Placeholder for more products */}
+              <Card className="border-dashed">
+                <CardHeader>
+                  <CardTitle className="text-lg text-muted-foreground">
+                    More Coming Soon
+                  </CardTitle>
+                  <CardDescription>
+                    New products are in development. Stay tuned for updates.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex items-center justify-center py-8">
+                  <Sparkles className="size-12 text-muted-foreground/20" />
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          {/* Experiments Tab */}
+          <TabsContent value="experiments" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Experiment Card Example 1 */}
+              <Card className="group hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <Sparkles className="size-5 text-primary" />
+                      </div>
+                    </div>
+                    <Badge>Live</Badge>
+                  </div>
+                  <CardTitle className="text-lg">AI Color Palette</CardTitle>
+                  <CardDescription>
+                    Generate beautiful color palettes using AI, tailored for
+                    your design needs.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="text-xs">
+                      AI
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      Design
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      Web
+                    </Badge>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    asChild
+                  >
+                    <Link href="/docs">
+                      Try It Out
+                      <ExternalLink className="ml-2 size-3" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Experiment Card Example 2 */}
+              <Card className="group hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <Sparkles className="size-5 text-primary" />
+                      </div>
+                    </div>
+                    <Badge variant="secondary">Prototype</Badge>
+                  </div>
+                  <CardTitle className="text-lg">Micro Analytics</CardTitle>
+                  <CardDescription>
+                    Privacy-first analytics in under 1KB. No cookies, no
+                    tracking.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="text-xs">
+                      JavaScript
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      Privacy
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      Analytics
+                    </Badge>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button variant="ghost" size="sm" className="w-full" disabled>
+                    In Development
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Experiment Card Example 3 */}
+              <Card className="group hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <Sparkles className="size-5 text-primary" />
+                      </div>
+                    </div>
+                    <Badge>Live</Badge>
+                  </div>
+                  <CardTitle className="text-lg">CLI Boilerplate</CardTitle>
+                  <CardDescription>
+                    Fast-start templates for building modern CLI tools in
+                    Node.js.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="text-xs">
+                      Node.js
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      CLI
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      Template
+                    </Badge>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    asChild
+                  >
+                    <Link href="/docs">
+                      View on GitHub
+                      <ExternalLink className="ml-2 size-3" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
 
       {/* Why Cooper Studio Section */}
