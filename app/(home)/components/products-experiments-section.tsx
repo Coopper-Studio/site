@@ -1,5 +1,5 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Sparkles, Package } from "lucide-react";
+import { Sparkles, Package, Rainbow } from "lucide-react";
 import { ProjectCard } from "./project-card";
 
 export function ProductsExperimentsSection() {
@@ -29,14 +29,14 @@ export function ProductsExperimentsSection() {
         <TabsContent value="products" className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProjectCard
-              icon={Package}
-              title="TaskFlow"
-              description="A minimalist task manager that focuses on what matters—your next action."
-              badge="Coming Soon"
-              badgeVariant="secondary"
-              techStack={["React", "Next.js", "TypeScript"]}
-              actionLabel="Coming Soon"
-              actionDisabled
+              icon={Rainbow}
+              title="Rainbow Paths"
+              description="Global LGBTQ+ rights map tracking decriminalization, depathologization, and marriage equality worldwide."
+              badge="Live"
+              badgeVariant="default"
+              techStack={["Next.js", "TypeScript", "ECharts", "TailwindCSS"]}
+              actionLabel="Visit Site"
+              actionHref="https://rainbow-paths.cooper-ai.org/"
             />
 
             <ProjectCard
