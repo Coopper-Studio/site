@@ -1,5 +1,5 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Sparkles, Package, Rainbow } from "lucide-react";
+import { Sparkles, Package, Rainbow, Heart } from "lucide-react";
 import { ProjectCard } from "./project-card";
 
 export function ProductsExperimentsSection() {
@@ -40,14 +40,14 @@ export function ProductsExperimentsSection() {
             />
 
             <ProjectCard
-              icon={Package}
-              title="QuickNote"
-              description="Capture thoughts instantly without friction. No folders, no complexity."
-              badge="Beta"
-              badgeVariant="outline"
-              techStack={["React", "Markdown", "PWA"]}
-              actionLabel="View Details"
-              actionHref="/blogs"
+              icon={Heart}
+              title="Emotion Cards"
+              description="A quiet product for emotional awareness. Just 30 seconds a day to check in with your emotions."
+              badge="In Development"
+              badgeVariant="secondary"
+              techStack={["SwiftUI", "iOS", "Core Data"]}
+              actionLabel="Coming Soon"
+              actionDisabled
             />
 
             <ProjectCard
