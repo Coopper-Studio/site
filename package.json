@@ -6,7 +6,7 @@
     "clean": "rm -rf .next out",
     "export:check": "bun scripts/check-export.mjs",
     "build": "bun run clean && next build && bun run export:check",
-    "dev": "next dev",
+    "dev": "rm -rf .next/dev && CHOKIDAR_USEPOLLING=1 WATCHPACK_POLLING=true next dev",
     "start": "next start",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
     "postinstall": "fumadocs-mdx",

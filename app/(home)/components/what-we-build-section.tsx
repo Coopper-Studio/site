@@ -8,7 +8,9 @@ export function WhatWeBuildSection() {
     <div className="max-w-6xl mx-auto w-full">
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-3">What We Build</h2>
-        <p className="text-muted-foreground">Three tracks of work moving in parallel</p>
+        <p className="text-muted-foreground">
+          Three tracks of work moving in parallel
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -16,52 +18,14 @@ export function WhatWeBuildSection() {
           icon={Package}
           title="Products"
           description="Small, focused products built around real problems."
-          items={[
-            {
-              title: "TaskFlow",
-              description: "A more reliable take on personal task management",
-              badge: "Planned",
-              badgeVariant: "secondary",
-            },
-            {
-              title: "QuickNote",
-              description: "A low-friction tool for capturing thoughts quickly",
-              badge: "Planned",
-              badgeVariant: "secondary",
-            },
-            {
-              title: "TimeBox",
-              description: "A focus timer built for deep work sessions",
-              badge: "Testing",
-              badgeVariant: "outline",
-            },
-          ]}
+          items={[]}
         />
 
         <FeatureCard
           icon={Wrench}
           title="Tools for Builders"
           description="Tools first built for internal use, then shared more widely."
-          items={[
-            {
-              title: "UI Component Kit",
-              description: "A reusable set of React components",
-              badge: "Open",
-              badgeVariant: "outline",
-            },
-            {
-              title: "Dev Boilerplates",
-              description: "Starter templates that skip repetitive setup work",
-              badge: "Open",
-              badgeVariant: "outline",
-            },
-            {
-              title: "CLI Helpers",
-              description: "Small command-line helpers for common development tasks",
-              badge: "Planned",
-              badgeVariant: "secondary",
-            },
-          ]}
+          items={[]}
         />
 
         <FeatureCard
@@ -80,7 +44,9 @@ export function WhatWeBuildSection() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Advance education, accessibility, and public knowledge</span>
+                <span>
+                  Advance education, accessibility, and public knowledge
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>

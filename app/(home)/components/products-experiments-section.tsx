@@ -59,20 +59,24 @@ export function ProductsExperimentsSection() {
         </div>
 
         <TabsContent value="products" className="mt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {productItems.map(renderProjectCard)}
-
-            <ProjectCard
-              placeholder
-              title="More in Progress"
-              description="New directions will be shared as they become concrete."
-              badge=""
-              techStack={[]}
-              placeholderIcon={
-                <Sparkles className="size-12 text-muted-foreground/20" />
-              }
-            />
-          </div>
+          {productItems.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {productItems.map(renderProjectCard)}
+            </div>
+          ) : (
+            <div className="max-w-2xl mx-auto">
+              <ProjectCard
+                placeholder
+                title="Products in Preparation"
+                description="No public product is available yet. New products will appear here once they move beyond exploration and into a clearer release path."
+                badge=""
+                techStack={[]}
+                placeholderIcon={
+                  <Sparkles className="size-12 text-muted-foreground/20" />
+                }
+              />
+            </div>
+          )}
         </TabsContent>
 
         <TabsContent value="experiments" className="mt-0">
