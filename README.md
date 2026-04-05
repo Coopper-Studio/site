@@ -1,45 +1,78 @@
-# cooper-studio
+# Cooper Studio
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+Cooper Studio 的官网与内容站，使用 Next.js、Fumadocs、MDX 与 Tailwind CSS 构建，面向纯静态导出和 Cloudflare 静态托管。
 
-Run development server:
+## 技术栈
+
+- Next.js App Router
+- React 19
+- Fumadocs UI + Fumadocs MDX
+- Tailwind CSS v4
+- shadcn/ui
+- Cloudflare Wrangler
+
+## 本地开发
+
+使用 Bun：
 
 ```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
+bun install
+bun run dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+默认本地地址：
 
-## Explore
+```txt
+http://localhost:3000
+```
 
-In the project, you can see:
+## 内容系统
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+- 博客内容位于 `content/blogs`
+- `source.config.ts` 定义 MDX frontmatter schema
+- `lib/source.ts` 是统一内容适配层
+- `app/blogs/[[...slug]]/page.tsx` 负责渲染文章页
+- `app/api/search/route.ts` 从内容源生成静态搜索索引
+- `app/llms-full.txt/route.ts` 聚合全部文章文本，供 LLM 或抓取方读取
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/blogs`               | The blog layout and pages.                             |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+## 首页数据
 
-### Fumadocs MDX
+- 首页项目卡片数据位于 `lib/projects.ts`
+- 首页业务组件位于 `app/(home)/components`
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+## 构建
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+```bash
+bun run build
+```
 
-## Learn More
+构建流程会：
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+1. 清理旧的 `.next` 与 `out`
+2. 执行静态导出
+3. 校验 `out/` 是否与当前源码一致
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+## 类型检查
+
+```bash
+bun run types:check
+```
+
+## 部署
+
+当前部署路径是纯静态导出：
+
+1. 运行 `bun run build`
+2. 确认最新静态文件已生成到 `out/`
+3. 使用 `wrangler.jsonc` 将 `out/` 发布到 Cloudflare
+
+## 已使用的 UI 组件
+
+当前主路径实际使用的组件主要包括：
+
+- `button`
+- `badge`
+- `card`
+- `tabs`
+
+`components/ui/*` 中的其他组件目前主要是 shadcn/ui 组件库存，未全部进入主业务路径。

@@ -8,6 +8,6 @@
     <path d="M175 221.875V262.5" stroke="#000000" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M87.5 225a75 75 0 0 0 48-132.625" stroke="#000000" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  <text x="600" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="600" text-anchor="middle" fill="#000000">Cooper Studio</text>
+  <text x="600" y="408" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="600" text-anchor="middle" fill="#000000">Cooper Studio</text>
+  <text x="600" y="468" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="500" text-anchor="middle" fill="#444444">Products · Experiments · Writing</text>
 </svg>
-

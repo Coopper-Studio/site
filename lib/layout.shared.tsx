@@ -14,9 +14,8 @@ export function baseOptions(): BaseLayoutProps {
     links: [
       {
         icon: <BookIcon />,
-        text: "Blogs",
+        text: "Writing",
         url: "/blogs",
-        // secondary items will be displayed differently on navbar
         secondary: false,
       },
     ],

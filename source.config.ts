@@ -1,11 +1,17 @@
 import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from 'fumadocs-mdx/config';
+import { z } from 'zod';
 
-// You can customise Zod schemas for frontmatter and `meta.json` here
-// see https://fumadocs.dev/docs/mdx/collections
+const blogFrontmatterSchema = frontmatterSchema.extend({
+  category: z.enum(['studio', 'product-thinking']),
+  status: z.enum(['published', 'evergreen']).default('published'),
+  tags: z.array(z.string()).default([]),
+  keywords: z.array(z.string()).default([]),
+});
+
 export const docs = defineDocs({
   dir: 'content/blogs',
   docs: {
-    schema: frontmatterSchema,
+    schema: blogFrontmatterSchema,
     postprocess: {
       includeProcessedMarkdown: true,
     },

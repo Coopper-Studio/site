@@ -1,8 +1,41 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Sparkles, Package, Rainbow, Heart } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { ProjectCard } from "./project-card";
+import { projects, type Project, type ProjectStatus } from "@/lib/projects";
+
+const statusLabel: Record<ProjectStatus, string> = {
+  live: "Live",
+  development: "In Development",
+  prototype: "Prototype",
+};
+
+const statusVariant: Record<ProjectStatus, "default" | "secondary" | "outline"> = {
+  live: "default",
+  development: "secondary",
+  prototype: "outline",
+};
+
+function renderProjectCard(project: Project) {
+  return (
+    <ProjectCard
+      key={project.slug}
+      icon={project.icon}
+      title={project.title}
+      description={project.description}
+      badge={statusLabel[project.status]}
+      badgeVariant={statusVariant[project.status]}
+      techStack={project.techStack}
+      actionLabel={project.actionLabel}
+      actionHref={project.actionHref}
+      actionDisabled={project.actionDisabled}
+    />
+  );
+}
 
 export function ProductsExperimentsSection() {
+  const productItems = projects.filter((item) => item.category === "product");
+  const experimentItems = projects.filter((item) => item.category === "experiment");
+
   return (
     <div className="max-w-6xl mx-auto w-full mt-24 md:mt-32">
       <div className="text-center mb-10">
@@ -13,7 +46,7 @@ export function ProductsExperimentsSection() {
           Products & Experiments
         </h2>
         <p className="text-muted-foreground">
-          Building in public, one project at a time
+          A public view of what is being built and tested
         </p>
       </div>
 
@@ -25,35 +58,14 @@ export function ProductsExperimentsSection() {
           </TabsList>
         </div>
 
-        {/* Products Tab */}
         <TabsContent value="products" className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ProjectCard
-              icon={Rainbow}
-              title="Rainbow Paths"
-              description="Global LGBTQ+ rights map tracking decriminalization, depathologization, and marriage equality worldwide."
-              badge="Live"
-              badgeVariant="default"
-              techStack={["Next.js", "TypeScript", "ECharts", "TailwindCSS"]}
-              actionLabel="Visit Site"
-              actionHref="https://rainbow-paths.cooper-ai.org/"
-            />
-
-            <ProjectCard
-              icon={Heart}
-              title="Emotion Cards"
-              description="A quiet product for emotional awareness. Just 30 seconds a day to check in with your emotions."
-              badge="In Development"
-              badgeVariant="secondary"
-              techStack={["SwiftUI", "iOS", "Core Data"]}
-              actionLabel="Coming Soon"
-              actionDisabled
-            />
+            {productItems.map(renderProjectCard)}
 
             <ProjectCard
               placeholder
-              title="More Coming Soon"
-              description="New products are in development. Stay tuned for updates."
+              title="More in Progress"
+              description="New directions will be shared as they become concrete."
               badge=""
               techStack={[]}
               placeholderIcon={
@@ -63,41 +75,9 @@ export function ProductsExperimentsSection() {
           </div>
         </TabsContent>
 
-        {/* Experiments Tab */}
         <TabsContent value="experiments" className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ProjectCard
-              icon={Sparkles}
-              title="AI Color Palette"
-              description="Generate beautiful color palettes using AI, tailored for your design needs."
-              badge="Live"
-              badgeVariant="default"
-              techStack={["AI", "Design", "Web"]}
-              actionLabel="Try It Out"
-              actionHref="/blogs"
-            />
-
-            <ProjectCard
-              icon={Sparkles}
-              title="Micro Analytics"
-              description="Privacy-first analytics in under 1KB. No cookies, no tracking."
-              badge="Prototype"
-              badgeVariant="secondary"
-              techStack={["JavaScript", "Privacy", "Analytics"]}
-              actionLabel="In Development"
-              actionDisabled
-            />
-
-            <ProjectCard
-              icon={Sparkles}
-              title="CLI Boilerplate"
-              description="Fast-start templates for building modern CLI tools in Node.js."
-              badge="Live"
-              badgeVariant="default"
-              techStack={["Node.js", "CLI", "Template"]}
-              actionLabel="View on GitHub"
-              actionHref="/blogs"
-            />
+            {experimentItems.map(renderProjectCard)}
           </div>
         </TabsContent>
       </Tabs>

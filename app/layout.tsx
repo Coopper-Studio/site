@@ -1,23 +1,19 @@
 import { Provider } from "./provider";
 import "./global.css";
-import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
     default: "Cooper Studio",
     template: "%s | Cooper Studio",
   },
-  description: "Cooper Studio - Building innovative products and experiments",
+  description: "An independent studio for products, experiments, and long-form writing.",
   keywords: [
     "Cooper Studio",
-    "software development",
-    "products",
-    "experiments",
+    "indie development",
+    "product experiments",
+    "technical writing",
+    "studio",
   ],
   authors: [{ name: "Cooper Studio" }],
   creator: "Cooper Studio",
@@ -33,7 +29,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Cooper Studio",
     title: "Cooper Studio",
-    description: "Building innovative products and experiments",
+    description: "An independent studio for products, experiments, and long-form writing.",
     images: [
       {
         url: "/opengraph-image.svg",
@@ -46,15 +42,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cooper Studio",
-    description: "Building innovative products and experiments",
+    description: "An independent studio for products, experiments, and long-form writing.",
     images: ["/opengraph-image.svg"],
   },
 };
 
 export default function Layout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen">
+    <html lang="en" suppressHydrationWarning>
+      <body className="flex min-h-screen flex-col font-sans">
         <Provider>{children}</Provider>
       </body>
     </html>

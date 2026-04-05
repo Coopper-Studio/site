@@ -12,20 +12,17 @@ export function WhyCooperSection() {
 
         <div className="space-y-4 max-w-2xl mx-auto">
           <p className="text-base md:text-lg text-foreground leading-relaxed">
-            Cooper Studio is run by an independent developer who values{" "}
-            <span className="font-medium text-primary">clarity</span>,{" "}
-            <span className="font-medium text-primary">restraint</span>, and{" "}
-            <span className="font-medium text-primary">long-term thinking</span>
-            .
+            An independent studio run with a bias toward
+            <span className="font-medium text-primary"> clarity</span>,
+            <span className="font-medium text-primary"> restraint</span>, and
+            <span className="font-medium text-primary"> long-term thinking</span>.
           </p>
 
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            This studio exists to support long-term independent
-            creation—building tools that matter, at a sustainable pace.
+            The goal is not to ship as many things as possible, but to build tools, experiments, and writing that hold up over time.
           </p>
         </div>
       </div>
     </div>
   );
 }
-

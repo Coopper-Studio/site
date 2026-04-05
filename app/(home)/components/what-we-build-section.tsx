@@ -8,93 +8,90 @@ export function WhatWeBuildSection() {
     <div className="max-w-6xl mx-auto w-full">
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-3">What We Build</h2>
-        <p className="text-muted-foreground">Three ways we create value</p>
+        <p className="text-muted-foreground">Three tracks of work moving in parallel</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Products */}
         <FeatureCard
           icon={Package}
           title="Products"
-          description="Small, focused tools for real problems."
+          description="Small, focused products built around real problems."
           items={[
             {
               title: "TaskFlow",
-              description: "Simple task management that actually works",
-              badge: "Coming Soon",
+              description: "A more reliable take on personal task management",
+              badge: "Planned",
               badgeVariant: "secondary",
             },
             {
               title: "QuickNote",
-              description: "Capture thoughts without the friction",
-              badge: "Coming Soon",
+              description: "A low-friction tool for capturing thoughts quickly",
+              badge: "Planned",
               badgeVariant: "secondary",
             },
             {
               title: "TimeBox",
-              description: "Focus timer for deep work sessions",
-              badge: "Beta",
+              description: "A focus timer built for deep work sessions",
+              badge: "Testing",
               badgeVariant: "outline",
             },
           ]}
         />
 
-        {/* Tools for Builders */}
         <FeatureCard
           icon={Wrench}
           title="Tools for Builders"
-          description="Tools I built for myself, now shared."
+          description="Tools first built for internal use, then shared more widely."
           items={[
             {
               title: "UI Component Kit",
-              description: "Copy-paste React components",
+              description: "A reusable set of React components",
               badge: "Open",
               badgeVariant: "outline",
             },
             {
               title: "Dev Boilerplates",
-              description: "Starter templates that skip the setup",
+              description: "Starter templates that skip repetitive setup work",
               badge: "Open",
               badgeVariant: "outline",
             },
             {
               title: "CLI Helpers",
-              description: "Command-line tools for common tasks",
-              badge: "Coming Soon",
+              description: "Small command-line helpers for common development tasks",
+              badge: "Planned",
               badgeVariant: "secondary",
             },
           ]}
         />
 
-        {/* Mission-Driven Support */}
         <FeatureCard
           icon={Heart}
           title="Mission-Driven Support"
-          description="Selective technical support for nonprofit & community projects."
+          description="Selective technical support for community work, public-interest efforts, and nonprofit projects."
         >
           <div className="space-y-2">
             <p className="text-sm text-muted-foreground">
-              We dedicate a portion of our time to projects that:
+              Priority goes to projects that:
             </p>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Serve underrepresented communities</span>
+                <span>Serve overlooked or underserved communities</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Promote education & accessibility</span>
+                <span>Advance education, accessibility, and public knowledge</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Build open-source infrastructure</span>
+                <span>Build open and sustainable public infrastructure</span>
               </li>
             </ul>
           </div>
 
           <div className="pt-2">
             <Button variant="outline" size="sm" className="w-full" asChild>
-              <Link href="/blogs">Learn More</Link>
+              <Link href="/blogs">Read More</Link>
             </Button>
           </div>
         </FeatureCard>
@@ -102,4 +99,3 @@ export function WhatWeBuildSection() {
     </div>
   );
 }
-
